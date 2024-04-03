@@ -50,6 +50,24 @@ class _MyHomePageState extends State<MyHomePage> {
   bool lkOver = false;
   bool gihubOver = false;
   bool whatsOver = false;
+  bool javaOver = false;
+  bool springOver = false;
+  bool hibernateOver = false;
+  bool dockerOver = false;
+  bool kafkaOver = false;
+  bool rabbitOver = false;
+  bool dartOver = false;
+  bool flutterOver = false;
+  bool gitOver = false;
+  bool androidOver = false;
+  bool microServicesOver = false;
+  bool azureOver = false;
+  bool awsOver = false;
+  bool postgresOver = false;
+  bool mysqlOver = false;
+  bool oracleOver = false;
+  bool scrumOver = false;
+  bool firebaseOver = false;
 
   @override
   void initState() {
@@ -301,160 +319,520 @@ class _MyHomePageState extends State<MyHomePage> {
                     runSpacing: 20,
                     alignment: WrapAlignment.center,
                     children: [
-                      const TecnologiesWidget(
-                        assetPath: "assets/images/java.png",
-                        name: "Java",
-                      ).animate().scaleXY(),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/spring.png",
-                        name: "Spring boot",
-                      ).animate().scaleXY(delay: 100.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            javaOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            javaOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          assetPath: "assets/images/java.png",
+                          name: "Java",
+                        )
+                            .animate()
+                            .scaleXY()
+                            .then()
+                            .animate(target: javaOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            springOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            springOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/spring.png",
+                          name: "Spring boot",
+                        )
+                            .animate()
+                            .scaleXY(delay: 100.ms)
+                            .then()
+                            .animate(target: springOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/hibernate.png",
-                        name: "Hibernate",
-                      ).animate().scaleXY(delay: 200.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            hibernateOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            hibernateOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/hibernate.png",
+                          name: "Hibernate",
+                        )
+                            .animate()
+                            .scaleXY(delay: 200.ms)
+                            .then()
+                            .animate(target: hibernateOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 20,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/docker.png",
-                        name: "Docker",
-                      ).animate().scaleXY(delay: 300.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            dockerOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            dockerOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/docker.png",
+                          name: "Docker",
+                        )
+                            .animate()
+                            .scaleXY(delay: 300.ms)
+                            .then()
+                            .animate(target: dockerOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 20,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/kafka.png",
-                        name: "Kafka",
-                      ).animate().scaleXY(delay: 400.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            kafkaOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            kafkaOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/kafka.png",
+                          name: "Kafka",
+                        )
+                            .animate()
+                            .scaleXY(delay: 400.ms)
+                            .then()
+                            .animate(target: kafkaOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            rabbitOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            rabbitOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/rabbit.png",
+                          name: "RabbitMQ",
+                        )
+                            .animate()
+                            .scaleXY(delay: 500.ms)
+                            .then()
+                            .animate(target: rabbitOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 20,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/rabbit.png",
-                        name: "RabbitMQ",
-                      ).animate().scaleXY(delay: 500.ms),
-                      const SizedBox(
-                        width: 20,
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            dartOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            dartOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/dart.png",
+                          name: "Dart",
+                        )
+                            .animate()
+                            .scaleXY(delay: 600.ms)
+                            .then()
+                            .animate(target: dartOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/dart.png",
-                        name: "Dart",
-                      ).animate().scaleXY(delay: 600.ms),
-                      const SizedBox(
-                        width: 30,
-                      ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/flutter.png",
-                        name: "Flutter",
-                      ).animate().scaleXY(delay: 700.ms),
-                      const SizedBox(
-                        width: 30,
-                      ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/git.png",
-                        name: "Git",
-                      ).animate().scaleXY(delay: 800.ms),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/android.png",
-                        name: "Android",
-                      ).animate().scaleXY(delay: 900.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            flutterOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            flutterOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/flutter.png",
+                          name: "Flutter",
+                        )
+                            .animate()
+                            .scaleXY(delay: 700.ms)
+                            .then()
+                            .animate(target: flutterOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/micro.png",
-                        name: "Microservices",
-                      ).animate().scaleXY(delay: 1000.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            gitOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            gitOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/git.png",
+                          name: "Git",
+                        )
+                            .animate()
+                            .scaleXY(delay: 800.ms)
+                            .then()
+                            .animate(target: gitOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/azure.webp",
-                        name: "AzureDevOps",
-                      ).animate().scaleXY(delay: 1100.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            androidOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            androidOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/android.png",
+                          name: "Android",
+                        )
+                            .animate()
+                            .scaleXY(delay: 900.ms)
+                            .then()
+                            .animate(target: androidOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/aws.png",
-                        name: "Amazon web services",
-                      ).animate().scaleXY(delay: 1200.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            microServicesOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            microServicesOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/micro.png",
+                          name: "Microservices",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1000.ms)
+                            .then()
+                            .animate(target: microServicesOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/postgres.png",
-                        name: "Postgre",
-                      ).animate().scaleXY(delay: 1300.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            azureOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            azureOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/azure.webp",
+                          name: "AzureDevOps",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1100.ms)
+                            .then()
+                            .animate(target: azureOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/sql.png",
-                        name: "MySQL",
-                      ).animate().scaleXY(delay: 1400.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            awsOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            awsOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/aws.png",
+                          name: "Amazon web services",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1200.ms)
+                            .then()
+                            .animate(target: awsOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/oracle.png",
-                        name: "Oracle server",
-                      ).animate().scaleXY(delay: 1500.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            postgresOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            postgresOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/postgres.png",
+                          name: "Postgre",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1300.ms)
+                            .then()
+                            .animate(target: postgresOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/scrum.png",
-                        name: "Scrum",
-                      ).animate().scaleXY(delay: 1600.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            mysqlOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            mysqlOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/sql.png",
+                          name: "MySQL",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1400.ms)
+                            .then()
+                            .animate(target: mysqlOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
-                      const TecnologiesWidget(
-                        size: 100,
-                        spaceBtween: 12,
-                        assetPath: "assets/images/firebase.webp",
-                        name: "Firebase",
-                      ).animate().scaleXY(delay: 1600.ms),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            oracleOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            oracleOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/oracle.png",
+                          name: "Oracle server",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1500.ms)
+                            .then()
+                            .animate(target: oracleOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            scrumOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            scrumOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/scrum.png",
+                          name: "Scrum",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1600.ms)
+                            .then()
+                            .animate(target: scrumOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      MouseRegion(
+                        onEnter: (event) {
+                          setState(() {
+                            firebaseOver = true;
+                          });
+                        },
+                        onExit: (event) {
+                          setState(() {
+                            firebaseOver = false;
+                          });
+                        },
+                        child: const TecnologiesWidget(
+                          size: 100,
+                          spaceBtween: 12,
+                          assetPath: "assets/images/firebase.webp",
+                          name: "Firebase",
+                        )
+                            .animate()
+                            .scaleXY(delay: 1600.ms)
+                            .then()
+                            .animate(target: firebaseOver ? 1 : 0)
+                            .scaleXY(
+                              begin: 1,
+                              end: 1.2,
+                            ),
+                      ),
                     ],
                   ),
                   const SizedBox(
