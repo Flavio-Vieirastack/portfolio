@@ -47,6 +47,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late ScrollController _scrollController;
+  bool lkOver = false;
+  bool gihubOver = false;
+  bool whatsOver = false;
 
   @override
   void initState() {
@@ -93,36 +96,99 @@ class _MyHomePageState extends State<MyHomePage> {
                 physics: const NeverScrollableScrollPhysics(),
                 controller: _scrollController,
                 children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          width: 50,
-                          child: GestureDetector(
-                            onTap: () => _launchUrl(
-                                "https://www.linkedin.com/in/flavio-vieira-developer/"),
-                            child: Image.asset("assets/images/lk.png"),
-                          ),
-                        ).animate().scaleXY(),
-                        SizedBox(
-                          width: 100,
-                          child: GestureDetector(
-                            onTap: () => _launchUrl(
-                                "https://github.com/Flavio-Vieirastack"),
-                            child: Image.asset("assets/images/github.png"),
-                          ),
-                        ).animate().scaleXY(delay: 100.ms),
-                        GestureDetector(
-                          onTap: () =>
-                              _launchUrl("https://wa.me/5588992827028"),
+                        MouseRegion(
+                          onEnter: (event) {
+                            setState(() {
+                              lkOver = true;
+                            });
+                          },
+                          onExit: (event) {
+                            setState(() {
+                              lkOver = false;
+                            });
+                          },
                           child: SizedBox(
                             width: 50,
-                            child: Image.asset("assets/images/whats.png"),
-                          ),
-                        ).animate().scaleXY(delay: 200.ms),
+                            child: GestureDetector(
+                              onTap: () => _launchUrl(
+                                  "https://www.linkedin.com/in/flavio-vieira-developer/"),
+                              child: Image.asset("assets/images/lk.png"),
+                            ),
+                          )
+                              .animate()
+                              .scaleXY()
+                              .then()
+                              .animate(target: lkOver ? 1 : 0)
+                              .scaleXY(
+                                begin: 1,
+                                end: 1.3,
+                              ),
+                        ),
+                        MouseRegion(
+                          onEnter: (event) {
+                            setState(() {
+                              gihubOver = true;
+                            });
+                          },
+                          onExit: (event) {
+                            setState(() {
+                              gihubOver = false;
+                            });
+                          },
+                          child: SizedBox(
+                            width: 100,
+                            child: GestureDetector(
+                              onTap: () => _launchUrl(
+                                  "https://github.com/Flavio-Vieirastack"),
+                              child: Image.asset("assets/images/github.png"),
+                            ),
+                          )
+                              .animate()
+                              .scaleXY(delay: 100.ms)
+                              .then()
+                              .animate(target: gihubOver ? 1 : 0)
+                              .scaleXY(
+                                begin: 1,
+                                end: 1.3,
+                              ),
+                        ),
+                        MouseRegion(
+                          onEnter: (event) {
+                            setState(() {
+                              whatsOver = true;
+                            });
+                          },
+                          onExit: (event) {
+                            setState(() {
+                              whatsOver = false;
+                            });
+                          },
+                          child: GestureDetector(
+                            onTap: () =>
+                                _launchUrl("https://wa.me/5588992827028"),
+                            child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/images/whats.png"),
+                            ),
+                          )
+                              .animate()
+                              .scaleXY(delay: 200.ms)
+                              .then()
+                              .animate(target: whatsOver ? 1 : 0)
+                              .scaleXY(
+                                begin: 1,
+                                end: 1.3,
+                              ),
+                        ),
                         const SizedBox(
                           width: 50,
                         )
