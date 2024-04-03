@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Experiences extends StatelessWidget {
   final String companyNameAndWork;
@@ -21,6 +21,11 @@ class Experiences extends StatelessWidget {
           companyNameAndWork,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
+        Container(
+          color: Colors.blue,
+          height: 5,
+          width: 50,
+        ),
         const SizedBox(
           height: 5,
         ),
@@ -30,7 +35,11 @@ class Experiences extends StatelessWidget {
         ),
         Text(
           "Tempo: $time",
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Colors.blueAccent,
+          ),
         ),
       ],
     );

@@ -38,6 +38,7 @@ dependencies:
   flutter_animate: ^4.5.0
   animated_text_kit: ^4.2.2
   web_smooth_scroll: ^1.1.0
+  glass: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:

@@ -2,8 +2,11 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:glass/glass.dart';
 import 'package:portfolio/Experiences.dart';
 import 'package:portfolio/Tecnologies_widget.dart';
+import 'package:portfolio/auto_visibility.dart';
+import 'package:portfolio/responsive.dart';
 import 'package:portfolio/row_or_colum.dart';
 import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
@@ -56,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: [
           Opacity(
-            opacity: 0.2,
+            opacity: 0.04,
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height,
               width: MediaQuery.sizeOf(context).width,
@@ -65,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(
-                      "assets/images/Space-Background-Images.jpg",
+                      "assets/images/Space-Background-Images.jpeg",
                     ),
                   ),
                 ),
@@ -73,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(horizontal: 40),
             child: WebSmoothScroll(
               scrollOffset: 100,
               animationDuration: 500,
@@ -82,77 +85,134 @@ class _MyHomePageState extends State<MyHomePage> {
                 physics: const NeverScrollableScrollPhysics(),
                 controller: _scrollController,
                 children: [
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 50,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Image.asset("assets/images/lk.png"),
+                          ),
+                        ).animate().scaleXY(),
+                        SizedBox(
+                          width: 100,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Image.asset("assets/images/github.png"),
+                          ),
+                        ).animate().scaleXY(delay: 100.ms),
+                        GestureDetector(
+                          onTap: () {},
+                          child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/images/whats.png"),
+                          ),
+                        ).animate().scaleXY(delay: 200.ms),
+                        const SizedBox(
+                          width: 50,
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   RowOrColumn(
+                    alignOnStart: false,
                     children: [
-                      SizedBox(
-                        width: 600,
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TypewriterAnimatedText(
-                              'Seja bem vindo(a)!',
-                              textStyle: const TextStyle(
-                                fontSize: 50,
-                                fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: Responsive.isDesktop(context) ? 100 : 0),
+                        child: SizedBox(
+                          width: 800,
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                'Seja bem vindo(a)!',
+                                textAlign: Responsive.isDesktop(context)
+                                    ? TextAlign.start
+                                    : TextAlign.center,
+                                textStyle: TextStyle(
+                                  fontSize:
+                                      Responsive.isDesktop(context) ? 80 : 40,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                speed: const Duration(milliseconds: 100),
                               ),
-                              speed: const Duration(milliseconds: 100),
-                            ),
-                            TypewriterAnimatedText(
-                              'Eu sou o Flávio',
-                              textStyle: const TextStyle(
-                                fontSize: 50,
-                                fontWeight: FontWeight.bold,
+                              TypewriterAnimatedText(
+                                'Eu sou o Flávio',
+                                textAlign: Responsive.isDesktop(context)
+                                    ? TextAlign.start
+                                    : TextAlign.center,
+                                textStyle: TextStyle(
+                                  fontSize:
+                                      Responsive.isDesktop(context) ? 80 : 40,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                speed: const Duration(milliseconds: 100),
                               ),
-                              speed: const Duration(milliseconds: 100),
-                            ),
-                            TypewriterAnimatedText(
-                              'Desenvolvedor Flutter e Java com 10 anos de Exp',
-                              textStyle: const TextStyle(
-                                fontSize: 50,
-                                fontWeight: FontWeight.bold,
+                              TypewriterAnimatedText(
+                                'Desenvolvedor Flutter e Java com 10 anos de Exp',
+                                textAlign: Responsive.isDesktop(context)
+                                    ? TextAlign.start
+                                    : TextAlign.center,
+                                textStyle: TextStyle(
+                                  fontSize:
+                                      Responsive.isDesktop(context) ? 80 : 40,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                speed: const Duration(milliseconds: 100),
                               ),
-                              speed: const Duration(milliseconds: 100),
-                            ),
-                          ],
-                          totalRepeatCount: 1,
-                          pause: const Duration(milliseconds: 50),
-                          displayFullTextOnTap: true,
-                          stopPauseOnTap: true,
+                            ],
+                            totalRepeatCount: 1,
+                            pause: const Duration(milliseconds: 50),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                          ),
                         ),
                       ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Stack(
                         children: [
-                          SizedBox(
-                            width: 50,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Image.asset("assets/images/lk.png"),
+                          AutoVisibility(
+                            child: Positioned(
+                              left: 20,
+                              child: Container(
+                                height: 500,
+                                width: 350,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              )
+                                  .asGlass(
+                                    frosted: false,
+                                    blurX: 20,
+                                    blurY: 20,
+                                    clipBorderRadius: BorderRadius.circular(30),
+                                  )
+                                  .animate()
+                                  .scaleY(delay: 100.ms),
                             ),
-                          ).animate().scaleXY(),
-                          SizedBox(
-                            width: 100,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Image.asset("assets/images/github.png"),
-                            ),
-                          ).animate().scaleXY(delay: 100.ms),
-                          GestureDetector(
-                            onTap: () {},
+                          ),
+                          Align(
+                            alignment: Responsive.isDesktop(context)
+                                ? Alignment.centerRight
+                                : Alignment.center,
                             child: SizedBox(
-                              width: 50,
-                              child: Image.asset("assets/images/whats.png"),
+                              height: Responsive.isDesktop(context) ? 500 : 300,
+                              child: Image.asset(
+                                "assets/images/editada.png",
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ).animate().scaleXY(delay: 200.ms),
-                          const SizedBox(
-                            width: 50,
-                          )
                         ],
                       )
                     ],
-                  ),
-                  const SizedBox(
-                    height: 50,
                   ),
                   Divider(
                     thickness: 5,
