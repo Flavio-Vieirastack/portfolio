@@ -30,7 +30,7 @@ class Experiences extends StatelessWidget {
         ),
         Text(
           "Tempo: $time",
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
         ),
       ],
     );

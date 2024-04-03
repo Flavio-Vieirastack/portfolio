@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:portfolio/Experiences.dart';
 import 'package:portfolio/Tecnologies_widget.dart';
+import 'package:portfolio/row_or_colum.dart';
 
 void main() {
   if (kDebugMode) {
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: [
           Opacity(
-            opacity: 0.1,
+            opacity: 0.2,
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height,
               width: MediaQuery.sizeOf(context).width,
@@ -66,48 +67,53 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(20),
             child: ListView(
               children: [
-                Row(
+                RowOrColumn(
                   children: [
                     AnimatedTextKit(
                       animatedTexts: [
                         TypewriterAnimatedText(
                           'Seja bem vindo(a)!',
                           textStyle: const TextStyle(
-                            fontSize: 50.0,
+                            fontSize: 50,
                             fontWeight: FontWeight.bold,
                           ),
-                          speed: const Duration(milliseconds: 200),
+                          speed: const Duration(milliseconds: 100),
                         ),
                       ],
                       totalRepeatCount: 1,
-                      pause: const Duration(milliseconds: 100),
+                      pause: const Duration(milliseconds: 50),
                       displayFullTextOnTap: true,
                       stopPauseOnTap: true,
                     ),
-                    const Spacer(),
-                    SizedBox(
-                      width: 50,
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Image.asset("assets/images/lk.png"),
-                      ),
-                    ).animate().scaleXY(),
-                    SizedBox(
-                      width: 100,
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Image.asset("assets/images/github.png"),
-                      ),
-                    ).animate().scaleXY(delay: 100.ms),
-                    GestureDetector(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: 50,
-                        child: Image.asset("assets/images/whats.png"),
-                      ),
-                    ).animate().scaleXY(delay: 200.ms),
-                    const SizedBox(
-                      width: 50,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 50,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Image.asset("assets/images/lk.png"),
+                          ),
+                        ).animate().scaleXY(),
+                        SizedBox(
+                          width: 100,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Image.asset("assets/images/github.png"),
+                          ),
+                        ).animate().scaleXY(delay: 100.ms),
+                        GestureDetector(
+                          onTap: () {},
+                          child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/images/whats.png"),
+                          ),
+                        ).animate().scaleXY(delay: 200.ms),
+                        const SizedBox(
+                          width: 50,
+                        )
+                      ],
                     )
                   ],
                 ),
@@ -135,182 +141,175 @@ class _MyHomePageState extends State<MyHomePage> {
                   thickness: 5,
                   color: Colors.grey.withOpacity(0.2),
                 ),
-                const Wrap(
+                Wrap(
                   runAlignment: WrapAlignment.spaceEvenly,
                   crossAxisAlignment: WrapCrossAlignment.end,
                   runSpacing: 20,
                   alignment: WrapAlignment.center,
                   children: [
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       assetPath: "assets/images/java.png",
                       name: "Java",
-                    ),
-                    TecnologiesWidget(
+                    ).animate().scaleXY(),
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/spring.png",
                       name: "Spring boot",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 100.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/hibernate.png",
                       name: "Hibernate",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 200.ms),
+                    const SizedBox(
                       width: 20,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/docker.png",
                       name: "Docker",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 300.ms),
+                    const SizedBox(
                       width: 20,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/kafka.png",
                       name: "Kafka",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 400.ms),
+                    const SizedBox(
                       width: 20,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/rabbit.png",
                       name: "RabbitMQ",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 500.ms),
+                    const SizedBox(
                       width: 20,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/dart.png",
                       name: "Dart",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 600.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/flutter.png",
                       name: "Flutter",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 700.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/git.png",
                       name: "Git",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 800.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/android.png",
                       name: "Android",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 900.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/micro.png",
                       name: "Microservices",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1000.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/azure.webp",
                       name: "AzureDevOps",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1100.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/aws.png",
                       name: "Amazon web services",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1200.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/postgres.png",
                       name: "Postgre",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1300.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/sql.png",
                       name: "MySQL",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1400.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/oracle.png",
                       name: "Oracle server",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1500.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/scrum.png",
                       name: "Scrum",
-                    ),
-                    SizedBox(
+                    ).animate().scaleXY(delay: 1600.ms),
+                    const SizedBox(
                       width: 30,
                     ),
-                    TecnologiesWidget(
+                    const TecnologiesWidget(
                       size: 100,
                       spaceBtween: 12,
                       assetPath: "assets/images/firebase.webp",
                       name: "Firebase",
-                    ),
+                    ).animate().scaleXY(delay: 1600.ms),
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
-                ),
-                Divider(
-                  thickness: 5,
-                  color: Colors.grey.withOpacity(0.2),
-                ),
-                const SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 const Text(
                   "Experiências",
                   style: TextStyle(fontSize: 30),
-                ),
+                ).animate().slideX(begin: -1),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -354,7 +353,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       'equipe, compartilhando conhecimento e '
                       'melhores práticas de desenvolvimento de software.\nFui capaz de enfrentar desafios complexos e entregar soluções de alta qualidade que atendam às necessidades do negócio. Estou constantemente buscando oportunidades para aprender e crescer profissionalmente, enquanto contribuo para o sucesso de projetos desafiadores.',
                   time: "1 mês",
-                ),
+                ).animate().slideX(begin: 1),
                 const Divider(),
                 const Experiences(
                   companyNameAndWork:
@@ -385,7 +384,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       "desafios enfrentados no projeto foram relacionados a"
                       " segurança pois por se tratar de um app bancário a principal preocupação foi com a segurança da aplicação. O projeto conta com, pix, cota capital, empréstimos, onboarding, cartões, investimentos, recarga de celulares, limites de crédito, débito direto, autenticação via cpf e senha, autenticação via biometria, registro de clientes via SMS e email, controle de dispositivo via MFA, controle de seguraça e logs via Dynatrace, firebase analytics para tracking e mapa de calor, remote config para armazenamento de chaves entre outros.",
                   time: "2 anos e 3 meses",
-                ),
+                ).animate().slideX(begin: -1),
                 const Divider(),
                 const Experiences(
                   companyNameAndWork:
@@ -437,7 +436,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       "problemas em aplicativos "
                       "existentes, garantindo sua funcionalidade e desempenho.\n-Durante minha atuação nesse cargo, pude aprimorar minhas habilidades em desenvolvimento de aplicativos móveis, programação Java e desenvolvimento de APIs RESTful com Spring. Além disso, adquiri experiência em trabalhar em equipe, resolver problemas complexos e entregar soluções de alta qualidade que atendiam às necessidades dos clientes e usuários finais.",
                   time: "7 meses",
-                ),
+                ).animate().slideX(begin: 1),
                 const Divider(),
                 const Experiences(
                   companyNameAndWork:
@@ -510,7 +509,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       "trabalho em equipe, comunicação "
                       "eficaz e resolução de problemas.",
                   time: "2 anos e 4 meses",
-                ),
+                ).animate().slideX(begin: -1),
                 const Divider(),
                 const Experiences(
                   companyNameAndWork:
@@ -560,7 +559,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       "de software.\n-Durante "
                       "minha experiência neste cargo, desenvolvi habilidades fundamentais em programação Java e desenvolvimento de aplicativos Android, além de adquirir uma compreensão sólida dos princípios de desenvolvimento web com Spring Framework.",
                   time: "5 anos e 5 meses",
-                )
+                ).animate().slideX(begin: 1)
               ],
             ),
           ),
