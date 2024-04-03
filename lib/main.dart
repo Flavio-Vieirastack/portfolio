@@ -69,21 +69,40 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 RowOrColumn(
                   children: [
-                    AnimatedTextKit(
-                      animatedTexts: [
-                        TypewriterAnimatedText(
-                          'Seja bem vindo(a)!',
-                          textStyle: const TextStyle(
-                            fontSize: 50,
-                            fontWeight: FontWeight.bold,
+                    SizedBox(
+                      width: 600,
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TypewriterAnimatedText(
+                            'Seja bem vindo(a)!',
+                            textStyle: const TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            speed: const Duration(milliseconds: 100),
                           ),
-                          speed: const Duration(milliseconds: 100),
-                        ),
-                      ],
-                      totalRepeatCount: 1,
-                      pause: const Duration(milliseconds: 50),
-                      displayFullTextOnTap: true,
-                      stopPauseOnTap: true,
+                          TypewriterAnimatedText(
+                            'Eu sou o Flávio',
+                            textStyle: const TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            speed: const Duration(milliseconds: 100),
+                          ),
+                          TypewriterAnimatedText(
+                            'Desenvolvedor Flutter e Java com 10 anos de Exp',
+                            textStyle: const TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            speed: const Duration(milliseconds: 100),
+                          ),
+                        ],
+                        totalRepeatCount: 1,
+                        pause: const Duration(milliseconds: 50),
+                        displayFullTextOnTap: true,
+                        stopPauseOnTap: true,
+                      ),
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,23 +135,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     )
                   ],
-                ),
-                const Text(
-                  "Eu sou o Flávio",
-                  style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "Desenvolvedor Flutter e Java com 10 anos de Exp",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
                 ),
                 const SizedBox(
                   height: 50,
