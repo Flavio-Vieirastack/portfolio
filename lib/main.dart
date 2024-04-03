@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:glass/glass.dart';
 import 'package:portfolio/Experiences.dart';
@@ -48,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late ScrollController _scrollController;
   bool lkOver = false;
+  bool emailOver = false;
   bool gihubOver = false;
   bool whatsOver = false;
   bool javaOver = false;
@@ -202,6 +204,55 @@ class _MyHomePageState extends State<MyHomePage> {
                               .scaleXY(delay: 200.ms)
                               .then()
                               .animate(target: whatsOver ? 1 : 0)
+                              .scaleXY(
+                                begin: 1,
+                                end: 1.3,
+                              ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        MouseRegion(
+                          onEnter: (event) {
+                            setState(() {
+                              emailOver = true;
+                            });
+                          },
+                          onExit: (event) {
+                            setState(() {
+                              emailOver = false;
+                            });
+                          },
+                          child: GestureDetector(
+                            onTap: () async {
+                              await Clipboard.setData(
+                                const ClipboardData(
+                                  text: "flavioemerson1@outlook.com",
+                                ),
+                              ).then(
+                                (value) =>
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    backgroundColor: Colors.black,
+                                    content: Text(
+                                      "Email copiado",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                            child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/images/email.webp"),
+                            ),
+                          )
+                              .animate()
+                              .scaleXY(delay: 200.ms)
+                              .then()
+                              .animate(target: emailOver ? 1 : 0)
                               .scaleXY(
                                 begin: 1,
                                 end: 1.3,
