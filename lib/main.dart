@@ -8,6 +8,7 @@ import 'package:portfolio/Tecnologies_widget.dart';
 import 'package:portfolio/auto_visibility.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/row_or_colum.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 void main() {
@@ -53,6 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  Future<void> _launchUrl(String url) async {
+    final Uri _url = Uri.parse(url);
+    if (await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,19 +102,22 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           width: 50,
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () => _launchUrl(
+                                "https://www.linkedin.com/in/flavio-vieira-developer/"),
                             child: Image.asset("assets/images/lk.png"),
                           ),
                         ).animate().scaleXY(),
                         SizedBox(
                           width: 100,
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () => _launchUrl(
+                                "https://github.com/Flavio-Vieirastack"),
                             child: Image.asset("assets/images/github.png"),
                           ),
                         ).animate().scaleXY(delay: 100.ms),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () =>
+                              _launchUrl("https://wa.me/5588992827028"),
                           child: SizedBox(
                             width: 50,
                             child: Image.asset("assets/images/whats.png"),
