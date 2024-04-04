@@ -71,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
   bool oracleOver = false;
   bool scrumOver = false;
   bool firebaseOver = false;
-  final normalFontSize = 18;
 
   @override
   void initState() {
@@ -938,7 +937,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         'orientação de membros juniores da '
                         'equipe, compartilhando conhecimento e '
                         'melhores práticas de desenvolvimento de software.\nFui capaz de enfrentar desafios complexos e entregar soluções de alta qualidade que atendam às necessidades do negócio. Estou constantemente buscando oportunidades para aprender e crescer profissionalmente, enquanto contribuo para o sucesso de projetos desafiadores.',
-                    time: "1 mês",
+                    time: "1 mês (Emprego atual)",
                   ).animate().slideX(begin: 1),
                   const Divider(),
                   const Experiences(
