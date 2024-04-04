@@ -32,6 +32,7 @@ class Experiences extends StatelessWidget {
         Text(
           description,
           textAlign: TextAlign.justify,
+          style: const TextStyle(fontSize: 18),
         ),
         Text(
           "Tempo: $time",

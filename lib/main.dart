@@ -10,7 +10,8 @@ import 'package:portfolio/auto_visibility.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/row_or_colum.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:web_smooth_scroll/web_smooth_scroll.dart';
+
+import 'custom_scroll.dart';
 
 void main() {
   if (kDebugMode) {
@@ -70,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool oracleOver = false;
   bool scrumOver = false;
   bool firebaseOver = false;
+  final normalFontSize = 18;
 
   @override
   void initState() {
@@ -108,13 +110,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: WebSmoothScroll(
-              scrollOffset: 100,
-              animationDuration: 500,
-              controller: _scrollController,
+            child: CustomScroll(
+              scrollController: _scrollController,
               child: ListView(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: _scrollController,
+                physics: Responsive.isDesktop(context)
+                    ? const NeverScrollableScrollPhysics()
+                    : null,
+                controller:
+                    Responsive.isDesktop(context) ? _scrollController : null,
                 children: [
                   const SizedBox(
                     height: 20,
@@ -287,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Responsive.isDesktop(context) ? 80 : 40,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                speed: const Duration(milliseconds: 100),
+                                speed: const Duration(milliseconds: 80),
                               ),
                               TypewriterAnimatedText(
                                 'Eu sou o Flávio',
@@ -299,7 +302,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Responsive.isDesktop(context) ? 80 : 40,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                speed: const Duration(milliseconds: 100),
+                                speed: const Duration(milliseconds: 80),
                               ),
                               TypewriterAnimatedText(
                                 'Desenvolvedor Flutter e Java com 10 anos de Exp',
@@ -311,7 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Responsive.isDesktop(context) ? 80 : 40,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                speed: const Duration(milliseconds: 100),
+                                speed: const Duration(milliseconds: 80),
                               ),
                             ],
                             totalRepeatCount: 1,
@@ -1143,6 +1146,94 @@ class _MyHomePageState extends State<MyHomePage> {
                         "minha experiência neste cargo, desenvolvi habilidades fundamentais em programação Java e desenvolvimento de aplicativos Android, além de adquirir uma compreensão sólida dos princípios de desenvolvimento web com Spring Framework.",
                     time: "5 anos e 5 meses",
                   ).animate().slideX(begin: 1),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  const Text(
+                    "Soft skills",
+                    style: TextStyle(fontSize: 30),
+                  ).animate().slideX(begin: -1),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      color: Colors.blue,
+                      width: 150,
+                      height: 5,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Comunicação eficaz: '
+                    'Capacidade de expressar '
+                    'ideias e informações de '
+                    'forma clara e concisa, '
+                    'tanto verbalmente quanto '
+                    'por escrito, e de se comunicar '
+                    'de forma eficaz com colegas de '
+                    'equipe e stakeholders.\nColaboração: '
+                    'Capacidade de trabalhar em equipe de '
+                    'forma eficaz, contribuindo ativamente '
+                    'para alcançar os objetivos do '
+                    'projeto e colaborando com '
+                    'outros membros da equipe '
+                    'em um ambiente de trabalho '
+                    'colaborativo.\nAdaptabilidade: '
+                    'Capacidade de se adaptar a '
+                    'novas tecnologias, metodologias '
+                    'de desenvolvimento e '
+                    'ambientes de trabalho em constante '
+                    'mudança, e de aprender rapidamente '
+                    'novos conceitos e habilidades conforme '
+                    'necessário.\nResolução de'
+                    ' problemas: Habilidade '
+                    'em identificar e resolver'
+                    ' problemas de forma '
+                    'eficiente e eficaz, '
+                    'usando pensamento crítico e criatividade'
+                    ' para encontrar soluções inovadoras para '
+                    'desafios técnicos.\nPensamento analítico: '
+                    'Capacidade de analisar e '
+                    'compreender problemas complexos,'
+                    ' descompondo-os em partes'
+                    ' menores e identificando '
+                    'padrões e tendências que '
+                    'possam levar a soluções '
+                    'eficazes.\nFoco no cliente: '
+                    'Orientação para o cliente e '
+                    'compreensão das necessidades e'
+                    ' expectativas dos usuários finais, '
+                    'garantindo que os produtos e soluções'
+                    ' desenvolvidos atendam às suas '
+                    'necessidades e ofereçam uma '
+                    'experiência positiva.\nGerenciamento '
+                    'de tempo e priorização: Capacidade '
+                    'de gerenciar eficientemente o '
+                    'tempo e priorizar tarefas e '
+                    'projetos para cumprir prazos e metas, '
+                    'garantindo o sucesso e a entrega '
+                    'oportuna dos projetos.\nPensamento crítico: '
+                    'Capacidade de analisar informações'
+                    ' de forma crítica e questionar '
+                    'suposições, buscando constantemente'
+                    ' maneiras de melhorar processos e '
+                    'soluções existentes.\nResiliência: '
+                    'Capacidade de lidar com pressão e '
+                    'adversidade de forma positiva e '
+                    'eficaz, mantendo o foco e a '
+                    'produtividade mesmo diante de desafios e '
+                    'contratempos.\nCuriosidade e aprendizado '
+                    'contínuo: Disposição para '
+                    'buscar novos conhecimentos e '
+                    'habilidades, tanto dentro quanto '
+                    'fora da área de trabalho, e '
+                    'disposição para aprender com os erros'
+                    ' e buscar constantemente oportunidades '
+                    'de crescimento e desenvolvimento pessoal'
+                    ' e profissional.',
+                    style: TextStyle(fontSize: 18),
+                  ),
                   const SizedBox(
                     height: 100,
                   )
