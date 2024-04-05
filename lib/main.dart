@@ -7,6 +7,7 @@ import 'package:glass/glass.dart';
 import 'package:portfolio/Experiences.dart';
 import 'package:portfolio/Tecnologies_widget.dart';
 import 'package:portfolio/auto_visibility.dart';
+import 'package:portfolio/carroussel.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/row_or_colum.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -365,6 +366,43 @@ class _MyHomePageState extends State<MyHomePage> {
                   Divider(
                     thickness: 5,
                     color: Colors.grey.withOpacity(0.2),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  const Text(
+                    "Projetos",
+                    style: TextStyle(fontSize: 30),
+                  ).animate().slideX(begin: -1),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      color: Colors.blue,
+                      width: 100,
+                      height: 5,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  const Carroussel(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "Stacks",
+                    style: TextStyle(fontSize: 30),
+                  ).animate().slideX(begin: -1),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      color: Colors.blue,
+                      width: 100,
+                      height: 5,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
                   ),
                   Wrap(
                     runAlignment: WrapAlignment.spaceEvenly,
